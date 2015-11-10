@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<link href="./css/app.css" th:href="@{/css/app.css}" rel="stylesheet"/>
+<script type="text/javascript" src="../../js/lib/jquery.js" th:src="@{/js/lib/jquery.js}"></script>
+<title>Thymeleaf</title>
+</head>
+<body>
+  <div id="menu" th:include="common/nosign_header.html :: menu"></div>
+  <section>
+    <div class="u-pg">
+      <div class="u-mbgx">
+        <h1 th:text="${message}">title1</h1>
+      </div>
+      <ul>
+        <li th:each="item : ${items}" th:text="${item.text}">Item1</li>
+        <li th:remove="all">Item2</li>
+        <li th:remove="all">Item3</li>
+        <li th:remove="all">Item4</li>
+      </ul>
+    </div>
+    <div class="u-pg">
+      <h2>title2</h2>
+    </div>
+  </section>
+</body>
+</html>
