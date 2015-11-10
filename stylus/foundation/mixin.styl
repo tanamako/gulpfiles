@@ -1,0 +1,61 @@
+color1 = #31ccb0
+
+hide-text()
+	text-indent 100%
+	white-space nowrap
+	overflow hidden
+flexbox()
+	display -webkit-box !important
+	display box
+box-align(prop)
+	vendor('box-align',prop)
+box-pack(prop)
+	vendor('box-pack',prop)
+box-sizing(prop)
+	vendor('box-sizing',prop)
+box-flex(n)
+	vendor('box-flex',n)
+vendor(prop, args)
+	-webkit-{prop} args
+	-moz-{prop} args
+	-o-{prop} args
+	-ms-{prop} args
+	{prop} args
+gradientHorizon(color1, position1, color2, position2)
+	background  -webkit-gradient(linear, left top, right top, color-stop(position1, color1), color-stop(position2, color2))
+	background  -webkit-linear-gradient(left, color1 position1, color2 position2)
+	background  linear-gradient(left, color1 position1, color2 position2)
+multiple_ellipsis(h,line)
+	w = 100%
+	h = h ? h : 100px
+	lineH = h / line
+	moreW = 3em
+	display block
+	overflow hidden
+	width w
+	height h
+	margin 0
+	padding 0
+	line-height lineH
+	&::before
+		content ""
+		float left
+		width 5px
+		height h
+	&::after
+		content '\02026'
+		float right
+		position: relative;
+		top -(lineH)
+		left 100%
+		width moreW
+		margin-left -(moreW)
+		padding-top (lineH / 4)
+		padding-right 5px
+		text-align right
+		gradientHorizon(rgba(#fff,0),0,rgba(#fff,1),50%)
+
+	> *:first-child
+		float right
+		width 100%
+		margin-left -5px
