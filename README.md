@@ -6,3 +6,5 @@
 ・stylusからCSSを生成  
 ・CSSの圧縮  
 ・CSSの結合  
+・Sprite画像の生成(Todo)  
+・IE対応  
